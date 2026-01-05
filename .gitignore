@@ -72,4 +72,4 @@ coverage/
 # Misc
 *.pem
 
-./backend/data
+backend/data/

@@ -13,7 +13,8 @@ const Home = () => {
     const fetchSubjects = async () => {
       try {
         const data = await categoryAPI.getAll({ type: 'subject' });
-        setSubjects(data);
+        // 确保subjects是数组
+        setSubjects(Array.isArray(data) ? data : []);
       } catch (err) {
         setError('获取学科分类失败');
         console.error(err);
@@ -127,8 +128,8 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {subjects.map((subject) => (
               <Link
-                key={subject._id}
-                to={`/category/${subject._id}`}
+                key={subject.id || subject._id}
+                to={`/category/${subject.id || subject._id}`}
                 className="subject-card card"
               >
                 <div className="subject-icon">

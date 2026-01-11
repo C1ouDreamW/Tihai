@@ -21,7 +21,7 @@ const Layout = () => {
   const navLinks = [
     { path: '/', icon: <FaHome />, label: '首页' },
     { path: '/stats', icon: <FaChartBar />, label: '学习统计' },
-    { path: '/profile', icon: <FaUser />, label: user?.username || '个人中心' }
+    { path: '/profile', icon: <FaUser />, label: (user?.username && user.username !== '0' && user.username !== 0) ? user.username : '个人中心' }
   ];
 
   // 管理员导航链接
@@ -63,7 +63,7 @@ const Layout = () => {
             ))}
 
             {/* 管理员链接 */}
-            {user?.isAdmin && adminLinks.map((link) => (
+            {(user?.isAdmin === 1 || user?.isAdmin === true) && adminLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -106,7 +106,7 @@ const Layout = () => {
             ))}
 
             {/* 管理员链接 */}
-            {user?.isAdmin && adminLinks.map((link) => (
+            {(user?.isAdmin === 1 || user?.isAdmin === true) && adminLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}

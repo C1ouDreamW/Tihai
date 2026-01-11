@@ -11,6 +11,7 @@ import CardMode from '../pages/CardMode';
 import Stats from '../pages/Stats';
 import Profile from '../pages/Profile';
 import ImportQuestions from '../pages/ImportQuestions';
+import UserManagement from '../pages/UserManagement';
 import NotFound from '../pages/NotFound';
 
 // 布局组件
@@ -30,6 +31,7 @@ const AppRoutes = () => {
           <Route path="stats" element={<Stats />} />
           <Route path="profile" element={<Profile />} />
           <Route path="import" element={<ImportQuestions />} />
+          <Route path="users" element={<UserManagement />} />
         </Route>
 
         {/* 独立路由 */}

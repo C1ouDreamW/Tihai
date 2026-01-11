@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
-import { FaHome, FaBook, FaChartBar, FaUser, FaSignOutAlt, FaBars, FaTimes, FaUpload } from 'react-icons/fa';
+import { FaHome, FaBook, FaChartBar, FaUser, FaSignOutAlt, FaBars, FaTimes, FaUpload, FaUsers } from 'react-icons/fa';
 import './Layout.css';
 
 const Layout = () => {
@@ -26,7 +26,8 @@ const Layout = () => {
 
   // 管理员导航链接
   const adminLinks = [
-    { path: '/import', icon: <FaUpload />, label: '导入题库' }
+    { path: '/import', icon: <FaUpload />, label: '导入题库' },
+    { path: '/users', icon: <FaUsers />, label: '用户管理' }
   ];
 
   return (

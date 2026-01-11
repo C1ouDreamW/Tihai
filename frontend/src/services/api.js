@@ -57,7 +57,15 @@ export const userAPI = {
   // 获取当前用户信息
   getCurrentUser: () => api.get('/users/me'),
   // 更新用户信息
-  updateProfile: (data) => api.put('/users/me', data)
+  updateProfile: (data) => api.put('/users/me', data),
+  // 获取所有用户（管理员）
+  getAllUsers: () => api.get('/users'),
+  // 创建用户（管理员）
+  createUser: (data) => api.post('/users', data),
+  // 更新用户（管理员）
+  updateUser: (id, data) => api.put(`/users/${id}`, data),
+  // 删除用户（管理员）
+  deleteUser: (id) => api.delete(`/users/${id}`)
 };
 
 // 分类相关API

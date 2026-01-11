@@ -38,6 +38,10 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running', sqliteDB: true });
 });
 
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: '后端运行正常~' });
+});
+
 // 启动服务器
 app.listen(config.PORT, () => {
   console.log(`Server running on port ${config.PORT}`);
